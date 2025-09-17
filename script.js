@@ -1,43 +1,35 @@
-let nama = "SantriKoding";
+let hasil = 5 + 3;
 
-console.log(nama);
+console.log(hasil); // 8
 
-var nama2 = "SantriKoding";
+let a = 10;
+let b = 3;
 
-console.log(nama2);
+console.log(a + b); // 13
+console.log(a % b); // 1
+console.log(a ** b); // 1000
 
-var x = 10;
-var x = 20; // tidak error
+console.log(5 == "5"); // true
+console.log(5 === "5"); // false
+console.log(5 !== 5); // false
 
-console.log(x); // 20
+let x = true;
+let y = false;
 
-let umur = 25;
+console.log(x && y); // false
+console.log(x || y); // true
+console.log(!x); // false
 
-console.log(umur);
+let angka = 10;
+angka += 5; // angka = angka + 5
+console.log(angka); // 15
 
-let y = 10;
-y = 15; // boleh diubah
+console.log(typeof "Hello"); // string
+console.log(typeof 123); // number
+console.log(typeof true); // boolean
+console.log(typeof {}); // object
 
-console.log(y);
+let umur = 18;
+let status = umur >= 17 ? "Dewasa" : "Anak-anak";
 
-// let y = 20; // error! tidak boleh deklarasi ulang
-
-{
-  let z = 100;
-  console.log(z); // 100
-}
-
-// console.log(z); // error: z is not defined
-
-const PI = 3.14;
-
-console.log(PI);
-
-const nama3 = "Santrikoding";
-
-// nama = "Belajar"; // error! tidak bisa assign ulang
-
-const angka = [1, 2, 3];
-angka.push(4); // boleh
-
-console.log(angka); // [1,2,3,4]
+console.log(status); // Dewasa
