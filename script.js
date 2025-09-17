@@ -1,42 +1,43 @@
-let nama = "Fauzan";
-let umur = 20;
-let tinggi = 170.5;
-let isOnline = false;
-let isLogin = true;
-let alamat; // undefined
-let data = null; // null
-let id = Symbol("id");
-let angkaBesar = 123456789012345678901234567890n;
-let fairuz = {
-  nama: "Fairuz",
-  umur: 16,
-  tinggi: 160.5 + "cm",
-};
-let listNama = ["Fauzan", "Fairuz", "Alya"];
-console.log("Halo " + nama);
-console.log("Umur saya " + umur + " tahun");
-console.log("Tinggi saya " + tinggi + " cm");
-console.log("Status online: " + isOnline);
-console.log("Status login: " + isLogin);
-console.log("Alamat: " + alamat);
-console.log("Data: " + data);
-console.log("ID: " + id.toString());
-console.log("Angka besar: " + angkaBesar);
-console.log("Nama teman saya: " + fairuz.nama);
-console.log("Umur teman saya: " + fairuz.umur + " tahun");
-console.log("Tinggi teman saya: " + fairuz.tinggi);
-console.log("Daftar nama teman saya: " + listNama.join(", "));
-console.log("Jumlah teman saya: " + listNama.length);
+let nama = "SantriKoding";
 
-function sapa() {
-  return "Selamat pagi, semuanya!";
+console.log(nama);
+
+var nama2 = "SantriKoding";
+
+console.log(nama2);
+
+var x = 10;
+var x = 20; // tidak error
+
+console.log(x); // 20
+
+let umur = 25;
+
+console.log(umur);
+
+let y = 10;
+y = 15; // boleh diubah
+
+console.log(y);
+
+// let y = 20; // error! tidak boleh deklarasi ulang
+
+{
+  let z = 100;
+  console.log(z); // 100
 }
-console.log(sapa());
 
-console.log(typeof "Hello"); // string
-console.log(typeof 100); // number
-console.log(typeof true); // boolean
-console.log(typeof {}); // object
-console.log(typeof []); // object (array tetap dianggap object)
-console.log(typeof null); // object (ini bug lama di JavaScript)
-console.log(typeof function () {}); // function
+// console.log(z); // error: z is not defined
+
+const PI = 3.14;
+
+console.log(PI);
+
+const nama3 = "Santrikoding";
+
+// nama = "Belajar"; // error! tidak bisa assign ulang
+
+const angka = [1, 2, 3];
+angka.push(4); // boleh
+
+console.log(angka); // [1,2,3,4]
