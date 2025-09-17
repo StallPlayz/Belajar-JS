@@ -1,35 +1,80 @@
-let hasil = 5 + 3;
+let umur = 20;
 
-console.log(hasil); // 8
+if (umur >= 18) {
+  console.log("Kamu sudah dewasa.");
+}
 
-let a = 10;
-let b = 3;
+let nilai = 70;
 
-console.log(a + b); // 13
-console.log(a % b); // 1
-console.log(a ** b); // 1000
+if (nilai >= 75) {
+  console.log("Lulus");
+} else {
+  console.log("Tidak Lulus");
+}
 
-console.log(5 == "5"); // true
-console.log(5 === "5"); // false
-console.log(5 !== 5); // false
+let skor = 85;
 
-let x = true;
-let y = false;
+if (skor >= 90) {
+  console.log("Nilai A");
+} else if (skor >= 80) {
+  console.log("Nilai B");
+} else if (skor >= 70) {
+  console.log("Nilai C");
+} else {
+  console.log("Nilai D");
+}
 
-console.log(x && y); // false
-console.log(x || y); // true
-console.log(!x); // false
+let hari = 3;
+let namaHari;
 
-let angka = 10;
-angka += 5; // angka = angka + 5
-console.log(angka); // 15
+switch (hari) {
+  case 1:
+    namaHari = "Senin";
+    break;
+  case 2:
+    namaHari = "Selasa";
+    break;
+  case 3:
+    namaHari = "Rabu";
+    break;
+  default:
+    namaHari = "Hari tidak valid";
+}
 
-console.log(typeof "Hello"); // string
-console.log(typeof 123); // number
-console.log(typeof true); // boolean
-console.log(typeof {}); // object
+console.log(namaHari);
 
-let umur = 18;
-let status = umur >= 17 ? "Dewasa" : "Anak-anak";
+for (let i = 1; i <= 5; i++) {
+  console.log("Iterasi ke-" + i);
+}
 
-console.log(status); // Dewasa
+let i = 1;
+
+while (i <= 5) {
+  console.log("Angka " + i);
+  i++;
+}
+
+let j = 1;
+
+do {
+  console.log("Nomor " + j);
+  j++;
+} while (j <= 5);
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue; // Lewati iterasi saat i = 3
+  }
+  console.log(i);
+}
+
+// Output: 1, 2, 4, 5
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 4) {
+    break; // Hentikan loop saat i = 4
+  }
+  console.log(i);
+}
+
+// Output: 1, 2, 3
