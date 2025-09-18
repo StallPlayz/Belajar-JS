@@ -1,36 +1,35 @@
-function sayHello() {
+const sayHello = () => {
   console.log("Halo, Dunia!");
-}
+};
 
-sayHello(); // Output: Halo, Dunia!
-
-function greet(nama) {
+const greet = (nama) => {
   console.log("Halo, " + nama + "!");
-}
-
-greet("Budi");  // Output: Halo, Budi!
-greet("Siti");  // Output: Halo, Siti!
-
-function tambah(a, b) {
-  return a + b;
-}
-
-let hasil = tambah(5, 3);
-console.log(hasil); // Output: 8
-
-const kali = function(a, b) {
-  return a * b;
 };
 
-console.log(kali(4, 5)); // Output: 20
+greet("Budi"); // Output: Halo, Budi!
 
-function hitungLuasPersegi(sisi) {
-  return sisi * sisi;
-}
-
-const hitungKelilingPersegi = function(sisi) {
-  return 4 * sisi;
+const helloWorld = () => {
+  console.log("Hello, World!");
 };
 
-console.log(hitungLuasPersegi(5));     // Output: 25
-console.log(hitungKelilingPersegi(5)); // Output: 20
+helloWorld();
+
+const sapa = nama => {
+  console.log("Hai, " + nama);
+};
+
+sapa("Andi"); // Output: Hai, Andi
+
+const tambah = (a, b) => a + b;
+
+console.log(tambah(3, 5)); // Output: 8
+
+const buatUser = (nama, umur) => ({
+  nama: nama,
+  umur: umur
+});
+
+console.log(buatUser("Rina", 20));
+/* Output:
+{ nama: 'Rina', umur: 20 }
+*/
