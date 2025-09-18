@@ -1,67 +1,54 @@
-let buah = ["Apel", "Pisang", "Jeruk"];
+let mahasiswa = {
+  nama: "Budi",
+  umur: 20,
+  jurusan: "Informatika"
+};
 
-console.log(buah);
+console.log(mahasiswa);
 
-let angka = new Array(1, 2, 3, 4, 5);
+let siswa = new Object();
+siswa.nama = "Siti";
+siswa.umur = 19;
+siswa.kelas = "12 IPA";
 
-console.log(angka);
+console.log(siswa);
 
-let hewan1 = ["Kucing", "Anjing", "Kelinci"];
+console.log(mahasiswa.nama); // Output: Budi
+console.log(siswa.umur);     // Output: 19
 
-console.log(hewan[0]); // Output: Kucing
-console.log(hewan[1]); // Output: Anjing
-console.log(hewan[2]); // Output: Kelinci
+console.log(mahasiswa["jurusan"]); // Output: Informatika
+console.log(siswa["kelas"]);       // Output: 12 IPA
 
-let hewan = ["Kucing", "Anjing", "Kelinci"];
-hewan[1] = "Burung";
+mahasiswa.alamat = "Jakarta";
 
-console.log(hewan); // Output: ["Kucing", "Burung", "Kelinci"]
+console.log(mahasiswa);
 
-console.log(hewan.length); // Output: 3
+mahasiswa.umur = 21;
 
-buah.push("Mangga");
+console.log(mahasiswa);
 
-console.log(buah); // ["Apel", "Pisang", "Jeruk", "Mangga"]
+delete mahasiswa.jurusan;
 
-buah.pop();
+console.log(mahasiswa);
 
-console.log(buah); // ["Apel", "Pisang", "Jeruk"]
+let mobil = {
+  merk: "Toyota",
+  model: "Avanza",
+  mesin: {
+    kapasitas: "1500cc",
+    bahanBakar: "Bensin"
+  }
+};
 
-buah.shift();
+console.log(mobil.mesin.kapasitas); // Output: 1500cc
 
-console.log(buah); // ["Pisang", "Jeruk"]
+for (let key in mahasiswa) {
+  console.log(key + " : " + mahasiswa[key]);
+}
 
-buah.unshift("Strawberry");
+/* Output:
+nama : Budi
+umur : 21
+alamat : Jakarta */
 
-console.log(buah); // ["Strawberry", "Pisang", "Jeruk"]
 
-buah.forEach(function(item, index) {
-  console.log(index, item);
-});
-
-buah.forEach((item, index) => console.log(index, item));
-
-let angkaBaru = angka.map(function(x) {
-  return x * 2;
-});
-
-console.log(angkaBaru); // [2, 4, 6, 8, 10]
-
-let angkaGanjil = angka.filter(function(x) {
-  return x % 2 !== 0;
-});
-
-console.log(angkaGanjil); // [1, 3, 5]
-
-let siswa = ["Ali", "Budi", "Citra", "Dina"];
-
-// Menambahkan siswa baru
-siswa.push("Eka");
-
-// Menghapus siswa terakhir
-siswa.pop();
-
-// Menampilkan semua siswa
-siswa.forEach(function(nama) {
-  console.log(nama);
-});
