@@ -1,51 +1,87 @@
-function tambah(a, b) {
-  return a + b;
-}
+const angka = [1, 2, 3];
 
-//Bagaimana jika kita harus menerima banyak argumen? berikut :
+const satu = angka[0];
+const dua = angka[1];
+const tiga = angka[2];
 
-function jumlahkan(...angka) {
-  let total = 0;
-  for (let nilai of angka) {
-    total += nilai;
-  }
-  return total;
-}
+console.log(satu, dua, tiga); 
+// Output: 1 2 3
 
-console.log(jumlahkan(1, 2));        // Output: 3
-console.log(jumlahkan(1, 2, 3, 4));  // Output: 10
+const angka2 = [1, 2, 3];
 
-function cetakData(nama, ...hobi) {
-  console.log("Nama:", nama);
-  console.log("Hobi:", hobi);
-}
+const [satu2, dua2, tiga2] = angka2;
 
-cetakData("Budi", "Mancing", "Ngoding", "Main bola");
+console.log(satu2, dua2, tiga2); 
+// Output: 1 2 3
 
-/* Output: 
+const angka3 = [1, 2, 3, 4];
 
-Nama: Budi
-
-Hobi: ["Mancing", "Ngoding", "Main bola"] */
-
-const angka = [1, 2, 3, 4, 5];
-
-const [pertama, kedua, ...sisanya] = angka;
+const [pertama, , ketiga] = angka3;
 
 console.log(pertama); // 1
-console.log(kedua);   // 2
-console.log(sisanya); // [3, 4, 5]
+console.log(ketiga);  // 3
+
+const warna = ["merah", "biru", "hijau", "kuning"];
+
+const [warna1, ...warnaLain] = warna;
+
+console.log(warna1);      // merah
+console.log(warnaLain);   // ["biru", "hijau", "kuning"]
 
 const user = {
-  nama: "Siti",
-  umur: 20,
-  kota: "Bandung"
+  nama: "Rudi",
+  umur: 30
 };
 
-const { nama, ...infoLain } = user;
+const nama = user.nama;
+const umur = user.umur;
 
-console.log(nama);      // Siti
-console.log(infoLain);  // { umur: 20, kota: 'Bandung' }
+console.log(nama, umur);
 
+const user1 = {
+  nama: "Rudi",
+  umur: 30
+};
 
+const { nama1, umur1 } = user1;
+
+console.log(nama1, umur1);
+
+const user2 = {
+  nama: "Rina",
+  umur: 28
+};
+
+const { nama: namaLengkap, umur: usia } = user2;
+
+console.log(namaLengkap); // Rina
+console.log(usia);        // 28
+
+const siswa = {
+  nama: "Ayu",
+  umur: 17,
+  kelas: "12 IPA"
+};
+
+const { nama2, ...infoLain } = siswa;
+
+console.log(nama2);      // Ayu
+console.log(infoLain);  // { umur: 17, kelas: '12 IPA' }
+
+const nama3 = "Budi";
+const umur2 = 20;
+
+const user3 = { nama3, umur2 };
+
+console.log(user3);
+// Output: { nama: 'Budi', umur: 20 }
+
+const angkasatu = 1;
+const angkadua = 2;
+const angkatiga = 3;
+
+const angka1 = [angkasatu, angkadua, angkatiga];
+
+console.log(angka1);
+// Output: [1, 2, 3]
 
