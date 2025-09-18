@@ -1,54 +1,42 @@
-let mahasiswa = {
-  nama: "Budi",
-  umur: 20,
-  jurusan: "Informatika"
+const angka1 = [1, 2, 3];
+
+console.log(...angka1);
+// Output: 1 2 3
+
+const buah1 = ["Apel", "Jeruk"];
+const buah2 = ["Mangga", "Pisang"];
+
+const semuaBuah = [...buah1, ...buah2];
+console.log(semuaBuah);
+// Output: ["Apel", "Jeruk", "Mangga", "Pisang"]
+
+const warnaAsli = ["Merah", "Biru"];
+const warnaSalinan = [...warnaAsli];
+
+warnaSalinan.push("Hijau");
+
+console.log(warnaAsli);   // ["Merah", "Biru"]
+console.log(warnaSalinan); // ["Merah", "Biru", "Hijau"]
+
+const user = {
+  nama: "Dina",
+  umur: 25
 };
 
-console.log(mahasiswa);
-
-let siswa = new Object();
-siswa.nama = "Siti";
-siswa.umur = 19;
-siswa.kelas = "12 IPA";
-
-console.log(siswa);
-
-console.log(mahasiswa.nama); // Output: Budi
-console.log(siswa.umur);     // Output: 19
-
-console.log(mahasiswa["jurusan"]); // Output: Informatika
-console.log(siswa["kelas"]);       // Output: 12 IPA
-
-mahasiswa.alamat = "Jakarta";
-
-console.log(mahasiswa);
-
-mahasiswa.umur = 21;
-
-console.log(mahasiswa);
-
-delete mahasiswa.jurusan;
-
-console.log(mahasiswa);
-
-let mobil = {
-  merk: "Toyota",
-  model: "Avanza",
-  mesin: {
-    kapasitas: "1500cc",
-    bahanBakar: "Bensin"
-  }
+const userBaru = {
+  ...user,
+  pekerjaan: "Programmer"
 };
 
-console.log(mobil.mesin.kapasitas); // Output: 1500cc
+console.log(userBaru);
+// Output: { nama: 'Dina', umur: 25, pekerjaan: 'Programmer' }
 
-for (let key in mahasiswa) {
-  console.log(key + " : " + mahasiswa[key]);
+function tambah(a, b, c) {
+  return a + b + c;
 }
 
-/* Output:
-nama : Budi
-umur : 21
-alamat : Jakarta */
+const angka = [1, 2, 3];
 
+console.log(tambah(...angka));
+// Output: 6
 
