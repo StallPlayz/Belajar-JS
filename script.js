@@ -1,29 +1,30 @@
-function greet(nama) {
-  if (nama === undefined) {
-    nama = "Guest";
-  }
-  console.log(`Halo, ${nama}`);
+// kondisi ? ekspresiJikaBenar : ekspresiJikaSalah;
+
+let umur = 20;
+let status;
+
+if (umur >= 18) {
+  status = "Dewasa";
+} else {
+  status = "Anak-anak";
 }
 
-function greet(nama = "Guest") {
-  console.log(`Halo, ${nama}`);
-}
+console.log(status); // Output: Dewasa
 
-greet();       // Output: Halo, Guest
-greet("Budi"); // Output: Halo, Budi
+let umur1 = 20;
+let status1 = umur1 >= 18 ? "Dewasa" : "Anak-anak";
 
-function hitungLuas(panjang = 1, lebar = 1) {
-  return panjang * lebar;
-}
+console.log(status1); // Output: Dewasa
 
-console.log(hitungLuas());          // Output: 1
-console.log(hitungLuas(5));          // Output: 5
-console.log(hitungLuas(5, 10));      // Output: 50
+let nilai = 75;
+let hasil = nilai >= 70 ? "Lulus" : "Tidak Lulus";
 
-function tambah(a, b = a) {
-  return a + b;
-}
+console.log(hasil); // Output: Lulus
 
-console.log(tambah(5));    // Output: 10 (karena b = a)
-console.log(tambah(5, 3)); // Output: 8
+let skor = 85;
+let grade = skor >= 90 ? "A" :
+             skor >= 80 ? "B" :
+             skor >= 70 ? "C" : "D";
+
+console.log(grade); // Output: B
 
