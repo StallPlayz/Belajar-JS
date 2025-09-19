@@ -1,43 +1,29 @@
-const nama = "Dian";
+function greet(nama) {
+  if (nama === undefined) {
+    nama = "Guest";
+  }
+  console.log(`Halo, ${nama}`);
+}
 
-const kalimat = `Halo, nama saya ${nama}`;
+function greet(nama = "Guest") {
+  console.log(`Halo, ${nama}`);
+}
 
-console.log(kalimat);
-// Output: Halo, nama saya Dian
+greet();       // Output: Halo, Guest
+greet("Budi"); // Output: Halo, Budi
 
-const nama1 = "Andi";
-const umur = 22;
+function hitungLuas(panjang = 1, lebar = 1) {
+  return panjang * lebar;
+}
 
-const perkenalan = `Halo, saya ${nama1}, umur saya ${umur} tahun.`;
+console.log(hitungLuas());          // Output: 1
+console.log(hitungLuas(5));          // Output: 5
+console.log(hitungLuas(5, 10));      // Output: 50
 
-console.log(perkenalan);
+function tambah(a, b = a) {
+  return a + b;
+}
 
-const a = 5;
-const b = 10;
-
-console.log(`Hasil penjumlahan: ${a + b}`);
-// Output: Hasil penjumlahan: 15
-
-const bio = `Nama: Siti
-Umur: 20
-Asal: Yogyakarta`;
-
-console.log(bio);
-
-/* Output:
-Nama: Siti
-Umur: 20
-Asal: Yogyakarta */
-
-const title = "Belajar JS";
-const content = "Template Literals itu keren!";
-
-const html = `
-  <div>
-    <h1>${title}</h1>
-    <p>${content}</p>
-  </div>
-`;
-
-console.log(html);
+console.log(tambah(5));    // Output: 10 (karena b = a)
+console.log(tambah(5, 3)); // Output: 8
 
