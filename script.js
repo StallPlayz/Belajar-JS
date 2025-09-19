@@ -1,22 +1,34 @@
-const janji = new Promise((resolve, reject) => {
-  let sukses = true;
+async function hello() {
+  return "Halo Dunia!";
+}
 
-  if (sukses) {
-    resolve("Berhasil!");
-  } else {
-    reject("Gagal!");
-  }
-});
+hello().then((hasil) => console.log(hasil));
+// Output: Halo Dunia!
 
-janji
-  .then((hasil) => {
-    console.log(hasil); // Output: Berhasil!
-  })
-  .catch((error) => {
-    console.log(error);
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Selesai setelah delay!");
+    }, ms);
   });
+}
 
-  function cekLogin(user) {
+async function proses() {
+  console.log("Mulai...");
+  let hasil = await delay(2000); // Menunggu 2 detik
+  console.log(hasil);
+  console.log("Selesai!");
+}
+
+proses();
+
+/* Output:
+Mulai...
+(Selamat 2 detik...)
+Selesai setelah delay!
+Selesai! */
+
+function login(user) {
   return new Promise((resolve, reject) => {
     if (user === "admin") {
       resolve("Login berhasil!");
@@ -26,19 +38,24 @@ janji
   });
 }
 
-cekLogin("admin")
-  .then((res) => console.log(res))    // Output: Login berhasil!
-  .catch((err) => console.log(err));
-
-  function delay(ms) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Selesai!");
-    }, ms);
-  });
+async function prosesLogin() {
+  try {
+    let hasil = await login("admin");
+    console.log(hasil);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-delay(2000).then((hasil) => {
-  console.log(hasil); // Output setelah 2 detik: Selesai!
-});
+prosesLogin();
+
+async function ambilData() {
+  let [data1, data2] = await Promise.all([
+    fetch('https://api.example.com/data1'),
+    fetch('https://api.example.com/data2')
+  ]);
+
+  console.log(await data1.json());
+  console.log(await data2.json());
+}
 
